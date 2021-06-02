@@ -15,7 +15,6 @@ set undofile
 set incsearch                                      
 set number relativenumber                          
 set timeoutlen=50
-set shell=fish
                                                    
 call plug#begin('~/.vim/plugged')                  
                                                    
@@ -44,10 +43,8 @@ Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()                                    
                                                    
-" set background=dark                                
-colorscheme dracula
-let g:airline_theme='dracula'
-" colorscheme abstract
+set background=dark                                
+colorscheme torte
 " let g:airline_theme='abstract'
 
 " set background to terminal default
