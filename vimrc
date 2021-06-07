@@ -43,8 +43,8 @@ Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()                                    
                                                    
-set background=dark                                
-colorscheme torte
+" set background=dark                                
+colorscheme ron
 " let g:airline_theme='abstract'
 
 " set background to terminal default
@@ -85,3 +85,6 @@ nnoremap <Down> :echoe "Use j"<CR>
 
 " Github thing
 nmap <leader>gs :G<CR>
+
+" Prettier
+command Prettier :!prettier % --write
