@@ -7,6 +7,6 @@ case $BLOCK_BUTTON in
     5) pamixer -d 5 ;;
 esac
 
-printpastatus() { [[ $(pamixer --get-mute) = "true" ]] && echo -n 🔇 && exit
+printpastatus() { [[ $(pamixer --get-mute) = "true" ]] && echo 🔇 && exit
 echo 🔊 $(pamixer --get-volume)% ;}
 printpastatus
