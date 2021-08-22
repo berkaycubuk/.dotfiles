@@ -1,10 +1,3 @@
-#        _                    
-# __   _(_)_ __ ___  _ __ ___ 
-# \ \ / / | '_ ` _ \| '__/ __|
-#  \ V /| | | | | | | | | (__ 
-#   \_/ |_|_| |_| |_|_|  \___|
-#                             
-
 syntax on                                          
                                                    
 set noerrorbells                                   
@@ -21,7 +14,7 @@ set undodir=~/.vim/undodir
 set undofile                                       
 set incsearch                                      
 set number relativenumber                          
-set timeoutlen=50
+set timeoutlen=0
                                                    
 call plug#begin('~/.vim/plugged')                  
                                                    
@@ -36,7 +29,9 @@ Plug 'tpope/vim-projectionist'
 Plug 'noahfrederick/vim-composer'
 Plug 'noahfrederick/vim-laravel'
 Plug 'yuezk/vim-js'
+Plug 'rust-lang/rust.vim'
 Plug 'maxmellon/vim-jsx-pretty'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 " auto close
 Plug 'jiangmiao/auto-pairs'
@@ -95,3 +90,8 @@ nmap <leader>gs :G<CR>
 
 " Prettier
 command Prettier :!prettier % --write
+
+" Alacritty mouse fix
+if $TERM == 'alacritty'
+    set ttymouse=sgr
+endif
