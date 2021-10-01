@@ -32,6 +32,7 @@ Plug 'yuezk/vim-js'
 Plug 'rust-lang/rust.vim'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'lervag/vimtex'
 
 " auto close
 Plug 'jiangmiao/auto-pairs'
