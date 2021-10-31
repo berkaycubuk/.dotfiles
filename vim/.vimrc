@@ -66,13 +66,13 @@ let g:netrw_browse_split = 0
                                                    
 let g:ctrlp_use_caching = 0                        
 let g:netrw_winsize = 25                           
+
+" save like a human
+nnoremap <C-s> :w<CR>
                                                    
 " fzf
 nnoremap <C-p> :GFiles<CR>
 nnoremap <C-t> :Files<CR>
-
-" save like a human
-nnoremap <C-s> :w<CR>
 
 " move around splits
 map <leader>h :wincmd h<CR>
