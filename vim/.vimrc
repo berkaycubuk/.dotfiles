@@ -91,8 +91,3 @@ nmap <leader>gs :G<CR>
 
 " Prettier
 command Prettier :!prettier % --write
-
-" Alacritty mouse fix
-if $TERM == 'alacritty'
-    set ttymouse=sgr
-endif
