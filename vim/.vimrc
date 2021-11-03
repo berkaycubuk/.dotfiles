@@ -34,6 +34,29 @@ Plug 'maxmellon/vim-jsx-pretty'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'lervag/vimtex'
 
+Plug 'amiorin/vim-project'
+Plug 'StanAngeloff/php.vim'
+Plug 'preservim/nerdtree'
+Plug 'tpope/vim-commentary'
+Plug 'mhinz/vim-startify'
+Plug 'mhinz/vim-signify'
+Plug 'stephpy/vim-php-cs-fixer'
+
+Plug 'ncm2/ncm2'
+Plug 'roxma/nvim-yarp'
+Plug 'phpactor/phpactor'
+Plug 'phpactor/ncm2-phpactor'
+Plug 'neomake/neomake'
+Plug 'adoy/vim-php-refactoring-toolbox'
+Plug 'phpactor/phpactor', {'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o'}
+
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'majutsushi/tagbar'
+Plug 'joonty/vdebug'
+Plug 'tobyS/vmustache'
+Plug 'tobyS/pdv'
+
 " auto close
 Plug 'jiangmiao/auto-pairs'
 
@@ -91,3 +114,5 @@ nmap <leader>gs :G<CR>
 
 " Prettier
 command Prettier :!prettier % --write
+
+au BufWritePost *.php silent! !eval '[ -f ".git/hooks/ctags" ] && .git/hooks/ctags' &
