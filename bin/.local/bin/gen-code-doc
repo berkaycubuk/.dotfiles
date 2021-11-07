@@ -1,0 +1,42 @@
+#!/bin/bash
+
+# Generate code documentation for university homeworks
+echo "1) template: generate empty template file"
+echo "2) compile: compile template file and generate pdf"
+echo -n "Choose what to do: "
+read CHOICE
+
+case $CHOICE in
+    1)
+        echo "# Title" >> homework.md
+        echo "" >> homework.md
+        echo "Full Name - School Number" >> homework.md
+        echo "" >> homework.md
+        echo "[Git Repository](https://git.berkaycubuk/)" >> homework.md
+        echo "" >> homework.md
+        ;;
+    2)
+        echo -n "Write file extension: "
+        read EXTENSION
+        ;;
+    *)
+        echo "unknown input!"
+        ;;
+esac
+
+if [ -z ${EXTENSION} ]; then
+    # extension is unset
+    echo "";
+else
+    # extension is set
+    for entry in *.${EXTENSION}
+    do
+        # write name of the file
+        # and write its contents
+        echo "$entry" >> homework.md
+        echo "\`\`\`" >> homework.md
+        cat ${entry} >> homework.md
+        echo "\`\`\`" >> homework.md
+        echo "" >> homework.md
+    done
+fi

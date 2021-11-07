@@ -57,6 +57,9 @@ Plug 'joonty/vdebug'
 Plug 'tobyS/vmustache'
 Plug 'tobyS/pdv'
 
+" copilot for testing
+Plug 'github/copilot.vim'
+
 " auto close
 Plug 'jiangmiao/auto-pairs'
 
@@ -66,11 +69,17 @@ Plug 'gruvbox-community/gruvbox'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'joshdick/onedark.vim'
+Plug 'sainnhe/sonokai'
+
+" c# and asp.net core
+Plug 'OmniSharp/omnisharp-vim'
 
 call plug#end()                                    
                                                    
 " set background=dark                                
-colorscheme ron
+colorscheme sonokai
+" colorscheme ron
 " let g:airline_theme='abstract'
 
 " set background to terminal default
@@ -112,7 +121,19 @@ nnoremap <Down> :echoe "Use j"<CR>
 " Github thing
 nmap <leader>gs :G<CR>
 
+" NERDTree
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
 " Prettier
 command Prettier :!prettier % --write
 
 au BufWritePost *.php silent! !eval '[ -f ".git/hooks/ctags" ] && .git/hooks/ctags' &
+
+" start NERDTree and put the cursor back in the other window
+autocmd VimEnter * NERDTree | wincmd p
+
+" add html syntax to dotnet razor files
+autocmd BufNewFile,BufRead *.cshtml set syntax=html
