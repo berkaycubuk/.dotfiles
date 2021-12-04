@@ -75,10 +75,14 @@ Plug 'sainnhe/sonokai'
 " c# and asp.net core
 Plug 'OmniSharp/omnisharp-vim'
 
+" Themes
+Plug 'tomasiser/vim-code-dark'
+
 call plug#end()                                    
                                                    
-" set background=dark                                
-colorscheme sonokai
+set background=dark                                
+" colorscheme sonokai
+colorscheme codedark
 " colorscheme ron
 " let g:airline_theme='abstract'
 
@@ -87,8 +91,12 @@ highlight Normal ctermbg=NONE guibg=NONE
 highlight SignColumn ctermbg=NONE  guibg=NONE
 highlight LineNr ctermbg=NONE guibg=NONE
 highlight airline_c ctermbg=NONE guibg=NONE
-" highlight airline_tabfill ctermbg=NONE guibg=NONE
-                                                   
+highlight airline_tab ctermbg=NONE guibg=NONE
+highlight airline_tabfill ctermbg=NONE guibg=NONE
+
+" Airline Settings
+let g:airline#extensions#tabline#enabled = 0
+
 if executable('rg')                                
     let g:rg_derive_root = 'true'                  
 endif                                              

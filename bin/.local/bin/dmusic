@@ -1,3 +1,38 @@
 #!/bin/bash
 
-youtube-dl -x --audio-format mp3 --prefer-ffmpeg $1
+# Help
+Help()
+{
+    # Display Help
+    echo "Usage: dmusic [options] url.."
+    echo
+    echo "Options:"
+    echo "--help    Display this information."
+    echo
+    echo "-f        Download from file with URLs."
+}
+
+# Variables
+Filename="null"
+
+# Get the options
+while getopts ":hf:" option; do
+    case $option in
+        h) # display Help
+            Help
+            exit;;
+        f) # enter a filename
+            Filename=$OPTARG;;
+        \?) # Invalid option
+            echo "Error: Invalid option"
+            exit;;
+    esac
+done
+
+if [[ $Filename != "null" ]]
+then
+    while read p; do
+        youtube-dl -x --audio-format mp3 --prefer-ffmpeg $p --no-playlist
+    done <$Filename
+fi
+
