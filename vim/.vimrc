@@ -145,3 +145,6 @@ autocmd VimEnter * NERDTree | wincmd p
 
 " add html syntax to dotnet razor files
 autocmd BufNewFile,BufRead *.cshtml set syntax=html
+
+" disable vim-go godef stack
+let g:go_def_mapping_enabled=0
