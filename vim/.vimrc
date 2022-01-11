@@ -57,9 +57,6 @@ Plug 'joonty/vdebug'
 Plug 'tobyS/vmustache'
 Plug 'tobyS/pdv'
 
-" copilot for testing
-Plug 'github/copilot.vim'
-
 " auto close
 Plug 'jiangmiao/auto-pairs'
 
@@ -148,3 +145,6 @@ autocmd BufNewFile,BufRead *.cshtml set syntax=html
 
 " disable vim-go godef stack
 let g:go_def_mapping_enabled=0
+
+" disable NERDTree auto open when vim starts
+let g:NERDTreeHijackNetrw=0
