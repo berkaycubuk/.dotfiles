@@ -15,6 +15,8 @@ set undofile
 set incsearch                                      
 set number relativenumber                          
 set timeoutlen=0
+
+filetype plugin indent on
                                                    
 call plug#begin('~/.vim/plugged')                  
                                                    
@@ -75,6 +77,9 @@ Plug 'OmniSharp/omnisharp-vim'
 " Themes
 Plug 'tomasiser/vim-code-dark'
 
+" Rust
+Plug 'rust-lang/rust.vim'
+
 call plug#end()                                    
                                                    
 set background=dark                                
@@ -109,7 +114,7 @@ nnoremap <C-s> :w<CR>
                                                    
 " fzf
 nnoremap <C-p> :GFiles<CR>
-nnoremap <C-t> :Files<CR>
+nnoremap <C-f> :Files<CR>
 
 " move around splits
 map <leader>h :wincmd h<CR>
@@ -130,7 +135,7 @@ nmap <leader>gs :G<CR>
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
+" nnoremap <C-f> :NERDTreeFind<CR>
 
 " Prettier
 command Prettier :!prettier % --write
