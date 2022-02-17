@@ -1,4 +1,5 @@
 syntax on                                          
+filetype plugin indent on
                                                    
 set noerrorbells                                   
 set tabstop=4 softtabstop=4                        
@@ -15,91 +16,30 @@ set undofile
 set incsearch                                      
 set number relativenumber                          
 set timeoutlen=0
+set mouse=a
+set clipboard=unnamedplus
+set completeopt=noinsert,menuone,noselect
+set wildmenu
 
 filetype plugin indent on
                                                    
 call plug#begin('~/.vim/plugged')                  
                                                    
-Plug 'AndrewRadev/splitjoin.vim'
-Plug 'leafgarland/typescript-vim'                  
-Plug 'neoclide/coc.nvim', {'branch': 'release'}    
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'                            
+Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-projectionist'
-Plug 'noahfrederick/vim-composer'
-Plug 'noahfrederick/vim-laravel'
-Plug 'yuezk/vim-js'
-Plug 'rust-lang/rust.vim'
-Plug 'maxmellon/vim-jsx-pretty'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'lervag/vimtex'
-
-Plug 'amiorin/vim-project'
-Plug 'StanAngeloff/php.vim'
-Plug 'preservim/nerdtree'
-Plug 'tpope/vim-commentary'
-Plug 'mhinz/vim-signify'
-Plug 'stephpy/vim-php-cs-fixer'
-
-Plug 'ncm2/ncm2'
-Plug 'roxma/nvim-yarp'
-Plug 'phpactor/phpactor'
-Plug 'phpactor/ncm2-phpactor'
-Plug 'neomake/neomake'
-Plug 'adoy/vim-php-refactoring-toolbox'
-Plug 'phpactor/phpactor', {'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o'}
-
-Plug 'evanleck/vim-svelte'
-Plug 'pangloss/vim-javascript'
-Plug 'HerringtonDarkholme/yats.vim'
-
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-Plug 'majutsushi/tagbar'
-Plug 'joonty/vdebug'
-Plug 'tobyS/vmustache'
-Plug 'tobyS/pdv'
-
-" auto close
-Plug 'jiangmiao/auto-pairs'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' } " glorious go plugin
+Plug 'preservim/nerdtree' " you now what is it
+Plug 'mhinz/vim-signify' " show diffs inside the file
 
 " themes
-Plug 'jdsimcoe/abstract.vim'
-"Plug 'gruvbox-community/gruvbox'
 Plug 'morhetz/gruvbox'
-Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'joshdick/onedark.vim'
-Plug 'sainnhe/sonokai'
-
-" c# and asp.net core
-Plug 'OmniSharp/omnisharp-vim'
-
-" Themes
-Plug 'tomasiser/vim-code-dark'
-
-" Rust
-Plug 'rust-lang/rust.vim'
 
 call plug#end()                                    
                                                    
 set background=light                                
 colorscheme gruvbox
-" colorscheme sonokai
-" colorscheme codedark
-" colorscheme ron
-" let g:airline_theme='abstract'
-
-" set background to terminal default
-" highlight Normal ctermbg=NONE guibg=NONE
-" highlight SignColumn ctermbg=NONE  guibg=NONE
-" highlight LineNr ctermbg=NONE guibg=NONE
-" highlight airline_c ctermbg=NONE guibg=NONE
-" highlight airline_tab ctermbg=NONE guibg=NONE
-" highlight airline_tabfill ctermbg=NONE guibg=NONE
 
 " Airline Settings
 let g:airline#extensions#tabline#enabled = 0
@@ -158,3 +98,4 @@ let g:go_def_mapping_enabled=0
 
 " disable NERDTree auto open when vim starts
 let g:NERDTreeHijackNetrw=0
+
