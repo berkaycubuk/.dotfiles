@@ -1,12 +1,14 @@
-syntax on                                          
+" Berkay's NeoVim config :^)
+
+syntax on                                 
 filetype plugin indent on
                                                    
-set noerrorbells                                   
-set tabstop=4 softtabstop=4                        
-set shiftwidth=4                                   
-set expandtab                                      
-set smartindent                                    
-set nu                                             
+set noerrorbells
+set tabstop=4 softtabstop=4
+set shiftwidth=4
+set expandtab
+set smartindent
+set nu
 set nowrap                                         
 set smartcase                                      
 set noswapfile                                     
@@ -20,6 +22,7 @@ set mouse=a
 set clipboard=unnamedplus
 set completeopt=noinsert,menuone,noselect
 set wildmenu
+set termguicolors
 
 filetype plugin indent on
                                                    
@@ -35,11 +38,13 @@ Plug 'mhinz/vim-signify' " show diffs inside the file
 
 " themes
 Plug 'morhetz/gruvbox'
+Plug 'ayu-theme/ayu-vim'
 
 call plug#end()                                    
                                                    
-set background=light                                
-colorscheme gruvbox
+set background=dark                                
+let ayucolor="dark"
+colorscheme ayu
 
 " Airline Settings
 let g:airline#extensions#tabline#enabled = 0
@@ -98,4 +103,6 @@ let g:go_def_mapping_enabled=0
 
 " disable NERDTree auto open when vim starts
 let g:NERDTreeHijackNetrw=0
+
+let NERDTreeShowHidden=1
 
