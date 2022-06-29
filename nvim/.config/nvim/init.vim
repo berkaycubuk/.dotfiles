@@ -63,7 +63,10 @@ vnoremap > >gv
 " open the current file in the default program
 nmap <leader>x :!xdg-open %<cr><cr>
 
-filetype plugin indent on
+" easy switching for buffers
+nmap <silent> <S-l> :bn<cr>
+nmap <silent> <S-l> :bn<cr>
+nmap <silent> <S-d> :bd<cr>
 
 "------------------------------------------------
 " Plugins
@@ -82,6 +85,7 @@ source ~/.config/nvim/plugins/signify.vim
 source ~/.config/nvim/plugins/surround.vim
 source ~/.config/nvim/plugins/editorconfig.vim
 source ~/.config/nvim/plugins/polyglot.vim
+source ~/.config/nvim/plugins/which-key.vim
 
 " themes
 Plug 'morhetz/gruvbox'
@@ -92,9 +96,6 @@ call plug#end()
 set background=dark                                
 let ayucolor="dark"
 colorscheme ayu
-
-" Airline Settings
-let g:airline#extensions#tabline#enabled = 0
 
 if executable('rg')                                
     let g:rg_derive_root = 'true'                  
