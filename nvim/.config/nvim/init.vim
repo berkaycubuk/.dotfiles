@@ -65,8 +65,11 @@ nmap <leader>x :!xdg-open %<cr><cr>
 
 " easy switching for buffers
 nmap <silent> <S-l> :bn<cr>
-nmap <silent> <S-l> :bn<cr>
+nmap <silent> <S-h> :bp<cr>
 nmap <silent> <S-d> :bd<cr>
+
+" snippet stuff
+nnoremap <leader>html :-1read ~/.config/nvim/snippets/base.html<CR>
 
 "------------------------------------------------
 " Plugins
@@ -86,13 +89,13 @@ source ~/.config/nvim/plugins/surround.vim
 source ~/.config/nvim/plugins/editorconfig.vim
 source ~/.config/nvim/plugins/polyglot.vim
 source ~/.config/nvim/plugins/which-key.vim
+" source ~/.config/nvim/plugins/tree.vim " there are some issues i need to fix
 
 " themes
 Plug 'morhetz/gruvbox'
 Plug 'ayu-theme/ayu-vim'
 
 call plug#end()                                    
-                                                   
 set background=dark                                
 let ayucolor="dark"
 colorscheme ayu
@@ -100,20 +103,12 @@ colorscheme ayu
 if executable('rg')                                
     let g:rg_derive_root = 'true'                  
 endif                                              
-                                                   
 let g:netrw_browse_split = 0                       
-                                                   
 let g:ctrlp_use_caching = 0                        
 let g:netrw_winsize = 25                           
 
 " save like a human
 nnoremap <C-s> :w<CR>
-
-" move around splits
-" map <leader>h :wincmd h<CR>
-" map <leader>j :wincmd j<CR>
-" map <leader>k :wincmd k<CR>
-" map <leader>l :wincmd l<CR>
 
 " I'm too young to die
 nnoremap <Left> :echoe "Use h"<CR>
@@ -124,28 +119,18 @@ nnoremap <Down> :echoe "Use j"<CR>
 " Github thing
 nmap <leader>gs :G<CR>
 
-" NERDTree
-nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
-" nnoremap <C-f> :NERDTreeFind<CR>
-
 " Prettier
 command Prettier :!prettier % --write
 
 au BufWritePost *.php silent! !eval '[ -f ".git/hooks/ctags" ] && .git/hooks/ctags' &
 
-" start NERDTree and put the cursor back in the other window
-autocmd VimEnter * NERDTree | wincmd p
-
 " add html syntax to dotnet razor files
-autocmd BufNewFile,BufRead *.cshtml set syntax=html
+" autocmd BufNewFile,BufRead *.cshtml set syntax=html
 
 " disable vim-go godef stack
 let g:go_def_mapping_enabled=0
 
-" disable NERDTree auto open when vim starts
-let g:NERDTreeHijackNetrw=0
-
-let NERDTreeShowHidden=1
-
+"lua << EOF
+"require'nvim-web-devicons'.get_icons()
+"require('nvim-tree').setup()
+"EOF
