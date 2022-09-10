@@ -71,34 +71,10 @@ nmap <silent> <S-d> :bd<cr>
 " snippet stuff
 nnoremap <leader>html :-1read ~/.config/nvim/snippets/base.html<CR>
 
-"------------------------------------------------
-" Plugins
-"------------------------------------------------
+source ~/.config/nvim/plugins.vim
 
-call plug#begin('~/.vim/plugged')
-
-source ~/.config/nvim/plugins/airline.vim
-source ~/.config/nvim/plugins/coc.vim
-source ~/.config/nvim/plugins/fzf.vim
-source ~/.config/nvim/plugins/nerdtree.vim
-source ~/.config/nvim/plugins/commentary.vim
-source ~/.config/nvim/plugins/fugitive.vim
-source ~/.config/nvim/plugins/vgo.vim
-source ~/.config/nvim/plugins/signify.vim
-source ~/.config/nvim/plugins/surround.vim
-source ~/.config/nvim/plugins/editorconfig.vim
-source ~/.config/nvim/plugins/polyglot.vim
-source ~/.config/nvim/plugins/which-key.vim
-" source ~/.config/nvim/plugins/tree.vim " there are some issues i need to fix
-
-" themes
-Plug 'morhetz/gruvbox'
-Plug 'ayu-theme/ayu-vim'
-
-call plug#end()                                    
-set background=dark                                
-let ayucolor="dark"
-colorscheme ayu
+set background=dark
+colorscheme PaperColor
 
 if executable('rg')                                
     let g:rg_derive_root = 'true'                  
