@@ -11,12 +11,13 @@ source ~/.config/nvim/plugins/fzf.vim
 source ~/.config/nvim/plugins/nerdtree.vim
 source ~/.config/nvim/plugins/commentary.vim
 source ~/.config/nvim/plugins/fugitive.vim
-source ~/.config/nvim/plugins/vgo.vim
+" source ~/.config/nvim/plugins/vgo.vim
 source ~/.config/nvim/plugins/signify.vim
 source ~/.config/nvim/plugins/surround.vim
 source ~/.config/nvim/plugins/editorconfig.vim
 " source ~/.config/nvim/plugins/polyglot.vim
 Plug 'sheerun/vim-polyglot'
+Plug 'tmsvg/pear-tree'
 source ~/.config/nvim/plugins/which-key.vim
 source ~/.config/nvim/plugins/ncm2.vim
 source ~/.config/nvim/plugins/phpactor.vim
